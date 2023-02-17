@@ -19,5 +19,27 @@ const create = async (newObject) => {
   const response = await axios.post(baseUrl, newObject, config);
   return response.data;
 };
+const update = async (objectToUpdate) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const response = await axios.put(
+    `${baseUrl}/${objectToUpdate.id}`,
+    objectToUpdate,
+    config
+  );
+  return response.data;
+};
+const remove = async (objectToDelete) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const response = await axios.delete(`${baseUrl}/${objectToDelete.id}`, config)
+  return response.data
+};
 // eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, setToken, create };
+export default { getAll, setToken, create, update, remove };
