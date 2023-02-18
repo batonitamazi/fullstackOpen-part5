@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const Blog = ({ blog, updateBlog, deleteBlog }) => {
   const blogStyle = {
     paddingTop: 10,
     paddingLeft: 2,
-    border: "solid",
+    border: 'solid',
     borderWidth: 1,
     marginBottom: 5,
-  };
+  }
   const handleUpdateLikes = () => {
     const blogToUpdate = {
       ...blog,
@@ -16,9 +16,9 @@ const Blog = ({ blog, updateBlog, deleteBlog }) => {
     setBlogLikes(blogLikes + 1)
     updateBlog(blogToUpdate)
   }
-  const [fullInfo, setFullInfo] = useState(false);
+  const [fullInfo, setFullInfo] = useState(false)
   const [blogLikes, setBlogLikes] = useState(blog.likes)
-  const showFullBlog = () => setFullInfo(!fullInfo);
+  const showFullBlog = () => setFullInfo(!fullInfo)
   return (
     <div style={blogStyle}>
       {fullInfo ? (
@@ -39,7 +39,7 @@ const Blog = ({ blog, updateBlog, deleteBlog }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Blog;
+export default Blog
