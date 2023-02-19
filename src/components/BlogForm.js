@@ -34,13 +34,14 @@ function BlogForm({ createBlog, setSuccessMessage }) {
         <div>
           author
           <input
+            id="author"
             value={author}
             onChange={({ target }) => setAuthor(target.value)}
           />
         </div>
         <div>
           url
-          <input value={url} onChange={({ target }) => setUrl(target.value)} />
+          <input value={url} onChange={({ target }) => setUrl(target.value)} id="url"/>
         </div>
         <button type="submit">save</button>
       </form>
